@@ -23,6 +23,7 @@ class BaseDataModel implements BaseDataModelInterface, \ArrayAccess
         $this->load($id);
     }
 
+
     public function offsetSet($offset, $value)
     {
         if (is_null($offset)) {
@@ -32,15 +33,18 @@ class BaseDataModel implements BaseDataModelInterface, \ArrayAccess
         }
     }
 
+
     public function offsetExists($offset)
     {
         return isset($this->data[$offset]);
     }
 
+
     public function offsetUnset($offset)
     {
         unset($this->data[$offset]);
     }
+
 
     public function offsetGet($offset)
     {
@@ -53,10 +57,12 @@ class BaseDataModel implements BaseDataModelInterface, \ArrayAccess
         return $this->data;
     }
 
+
     public function getType()
     {
         return $this->type;
     }
+
 
     public function load($id)
     {
@@ -115,7 +121,8 @@ class BaseDataModel implements BaseDataModelInterface, \ArrayAccess
     }
 
 
-    public function setId($id) {
+    public function setId($id)
+    {
         $this->id = $this->data['id'] = $id;
     }
 
