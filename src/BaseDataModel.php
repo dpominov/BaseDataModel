@@ -118,6 +118,7 @@ class BaseDataModel implements BaseDataModelInterface, \ArrayAccess
     public function setData(array $data)
     {
         $this->data = $data;
+        $this->setId($data['id'] ?? 0);
     }
 
 
